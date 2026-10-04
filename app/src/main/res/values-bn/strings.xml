@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ফাইল বদলাই</string>
+    <string name="pdf_to_pptx">PDF → PPTX</string>
+    <string name="merge_pdfs">PDF একত্রীকরণ</string>
+    <string name="images_to_pdf">ছবি → PDF</string>
+    <string name="pdf_to_images">PDF → ছবি</string>
+    <string name="image_to_image">ছবি রূপান্তর</string>
+    <string name="text_to_pdf">টেক্সট → PDF</string>
+    <string name="pick_file">ফাইল নির্বাচন</string>
+    <string name="pick_files">ফাইলসমূহ নির্বাচন</string>
+    <string name="convert">রূপান্তর করুন</string>
+    <string name="converting">রূপান্তর হচ্ছে…</string>
+    <string name="open">খুলুন</string>
+    <string name="share">শেয়ার করুন</string>
+    <string name="done">সম্পন্ন</string>
+    <string name="error">ত্রুটি</string>
+    <string name="pptx_note">⚠ স্লাইডগুলো ছবি আকারে সংরক্ষিত (টেক্সট সম্পাদনযোগ্য নয়)।</string>
+</resources>

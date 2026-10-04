@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">File Bodlai</string>
+    <string name="pdf_to_pptx">PDF → PPTX</string>
+    <string name="merge_pdfs">Merge PDFs</string>
+    <string name="images_to_pdf">Images → PDF</string>
+    <string name="pdf_to_images">PDF → Images</string>
+    <string name="image_to_image">Image Convert</string>
+    <string name="text_to_pdf">Text → PDF</string>
+    <string name="pick_file">Pick File</string>
+    <string name="pick_files">Pick Files</string>
+    <string name="convert">Convert</string>
+    <string name="converting">Converting…</string>
+    <string name="open">Open</string>
+    <string name="share">Share</string>
+    <string name="done">Done</string>
+    <string name="error">Error</string>
+    <string name="pptx_note">⚠ Slides are images (text is not editable).</string>
+</resources>

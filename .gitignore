@@ -1,0 +1,46 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java & Kotlin generated files
+*.class
+bin/
+gen/
+out/
+build/
+*/build/
+.gradle/
+.kotlin/
+
+# Local configuration file (contains private user paths & SDK dirs)
+local.properties
+setup-local-repo.ps1
+local-repo/
+gradle-*-bin.zip
+
+# Keystore files & Credentials (NEVER commit to GitHub)
+*.jks
+*.keystore
+*.p12
+*.key
+keystore.properties
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Log files
+*.log
