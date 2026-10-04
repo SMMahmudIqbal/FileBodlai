@@ -43,4 +43,6 @@ Thumbs.db
 ehthumbs.db
 
 # Log files
-*.log
+# Helper scripts
+upload_to_github.bat
+*.bat
