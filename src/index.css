@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom frosted glass & glow effects */
+.glass-panel {
+  background: var(--surface-card, rgba(22, 16, 38, 0.85));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border, rgba(255, 255, 255, 0.12));
+}
+
+.glass-subtle {
+  background: var(--surface-subtle, rgba(15, 10, 26, 0.75));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+.glow-card:hover {
+  box-shadow: 0 10px 30px -10px var(--card-glow, rgba(192, 132, 252, 0.3));
+}
+
+/* Custom clean scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
