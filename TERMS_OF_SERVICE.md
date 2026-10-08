@@ -1,4 +1,4 @@
-# User Agreement & Terms of Service for File Bodlai
+# User Agreement and Terms of Service for File Bodlai
 
 **Effective Date:** October 2026
 
@@ -6,7 +6,7 @@ Welcome to **File Bodlai** ("the Application"). By installing, accessing, or usi
 
 ---
 
-### 1. License & Fair Use
+### 1. License and Fair Use
 
 File Bodlai is open-source software distributed under the terms of the **MIT License**.
 
@@ -15,7 +15,7 @@ File Bodlai is open-source software distributed under the terms of the **MIT Lic
 
 ---
 
-### 2. User Responsibility & File Content
+### 2. User Responsibility and File Content
 
 - You are solely responsible for the files and documents you select, process, convert, or share using File Bodlai.
 - Because File Bodlai operates 100% offline without network servers, the authors and contributors have zero access to, control over, or liability for any content processed with the Application.
@@ -23,7 +23,7 @@ File Bodlai is open-source software distributed under the terms of the **MIT Lic
 
 ---
 
-### 3. "As-Is" Warranty & Disclaimer of Liability
+### 3. Warranty Disclaimer and Limitation of Liability
 
 THE APPLICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
 
@@ -31,13 +31,19 @@ IN NO EVENT SHALL THE AUTHORS, CONTRIBUTORS, OR COPYRIGHT HOLDERS BE LIABLE FOR 
 
 ---
 
-### 4. Updates & Termination
+### 4. Updates and Termination
 
 You may stop using File Bodlai at any time by uninstalling the application from your device. The terms of this agreement relating to intellectual property, warranty disclaimers, and limitation of liability shall survive any termination.
 
 ---
 
-### 5. Open Source Inquiries
+### 5. Project Inquiries
 
-For legal questions, bug disclosures, or feature enhancements, please visit the GitHub repository:
-👉 [https://github.com/FileBodlai/FileBodlai](https://github.com/FileBodlai/FileBodlai)
+For project questions, bug disclosures, or feature enhancements, please visit the GitHub repository:  
+[https://github.com/SMMahmudIqbal/FileBodlai](https://github.com/SMMahmudIqbal/FileBodlai)
+
+---
+
+### 6. Author and Attribution
+
+**Developed by S. M. Mahmud Iqbal**

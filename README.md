@@ -1,59 +1,60 @@
-# File Bodlai (ফাইল বদলাই) ⚡
+# File Bodlai (ফাইল বদলাই)
 
-> **Next-gen private file processing studio for Android.**  
-> 100% on-device, zero tracking, zero ads, and zero internet permissions.
+> **Developed by S. M. Mahmud Iqbal**  
+> *Next-Gen 100% Offline Private File Processing Studio for Android*
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-purple.svg?style=flat-square&logo=kotlin)](https://kotlinlang.org)
 [![Android](https://img.shields.io/badge/Android-7.0%2B%20(API%2024%2B)-green.svg?style=flat-square&logo=android)](https://developer.android.com)
 [![Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose%20%7C%20Material%203-4285F4.svg?style=flat-square)](https://developer.android.com/jetpack/compose)
-[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Offline%20(Air--Gapped)-brightgreen.svg?style=flat-square)](AndroidManifest.xml)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Offline%20(Air--Gapped)-brightgreen.svg?style=flat-square)](app/src/main/AndroidManifest.xml)
+[![Author](https://img.shields.io/badge/Developed%20By-S.%20M.%20Mahmud%20Iqbal-6366f1.svg?style=flat-square)](https://github.com/SMMahmudIqbal)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 ---
 
-## 💡 Why File Bodlai?
+## Overview
 
-Most document converter apps on mobile require you to upload your sensitive PDFs, tax returns, and ID photos to third-party cloud servers. They often bombard users with full-screen ads, track analytics, or lock basic tools behind recurring subscriptions.
+Most mobile document conversion applications require uploading personal documents, financial statements, and identification photos to third-party cloud servers. Many bundle intrusive advertisements, third-party analytics trackers, or recurring paywalls for standard operations.
 
-**File Bodlai** (*"File Change / Convert"*) is built on a single uncompromising principle: **Your files should never leave your phone.**
+**File Bodlai** (*"File Change / Convert"*) is built on an absolute principle: **your files never leave your device.**
 
-Everything is processed locally using Android’s native rendering engines and coroutine pipelines. Check `AndroidManifest.xml` yourself: **there is zero internet permission requested.**
-
----
-
-## ✨ Features
-
-- **⚡ Smart PDF Compressor**: Intelligently downsample and optimize heavy PDF documents to target file sizes with multi-level DPI and JPEG stream compression.
-- **📊 PDF → PPTX Presentation**: Converts document pages into clean, presentation-ready slides formatted with OpenXML specs.
-- **📑 Merge & Organize PDFs**: Combine multiple documents, reorder, rotate pages 90°/180°/270°, and selectively extract or delete pages.
-- **🖼️ Batch Image ↔ PDF Studio**: Turn galleries of JPG, PNG, and WebP images into standardized A4/Letter PDF sheets, or export PDF pages as high-resolution images.
-- **🎨 6 Handcrafted Aesthetic Themes**:
-  - *Neumorphic Glass* (Default frosted glass aesthetic)
-  - *Neo-Brutalist High-Contrast* (Bold retro typography and borders)
-  - *Cyberpunk OLED* (Pure `#000000` blacks with neon cyan/magenta accents)
-  - *Tokyo Night* (Subtle deep indigo synth aesthetic)
-  - *Swiss International Editorial* (Clean modernist monochrome grid)
-  - *Velvet Sunset Warm Amber* (Soft organic terracotta glow)
-- **📈 Real-Time Impact Telemetry**: On-device tracker that logs cumulative storage space saved and documents converted.
-- **🔍 Quick Look & Share**: Instant full-screen document preview with system sharing and file management integrations.
+All conversion algorithms execute locally using native Android rendering APIs and optimized coroutine pipelines. The application manifest (`AndroidManifest.xml`) requests **zero internet permissions**, guaranteeing complete air-gapped security and privacy.
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## Core Features
+
+- **Smart PDF Compression**: Intelligently downsamples and optimizes PDF file sizes across multi-level DPI thresholds with adaptive JPEG stream compression.
+- **PDF to PPTX Presentation**: Transmutes document pages into clean presentation slides compliant with OpenXML specifications.
+- **PDF Merging and Page Organization**: Seamlessly merges multiple documents, adjusts page order, supports 90/180/270 degree rotation, and allows selective page extraction or deletion.
+- **Batch Image and PDF Studio**: Converts image collections (JPG, PNG, WebP) into standardized A4 and Letter PDF documents, or extracts PDF pages as high-resolution images.
+- **Six Bespoke Themes**:
+  - *Neumorphic Glass* (Frosted glass visual aesthetic)
+  - *Neo-Brutalist High-Contrast* (Bold retro layout with defined borders)
+  - *Cyberpunk OLED* (Pure dark palette with high-contrast accenting)
+  - *Tokyo Night* (Subtle deep indigo synth styling)
+  - *Swiss International Editorial* (Clean modernist monochrome layout)
+  - *Velvet Sunset Warm Amber* (Soft organic terracotta ambiance)
+- **Real-Time Storage Telemetry**: Local, on-device logging of cumulative disk space saved and total document processing volume.
+- **Quick Look and Native Sharing**: Full-screen preview with system file sharing integration.
+
+---
+
+## Architecture and Tech Stack
 
 ```
 FileBodlai/
 ├── app/
 │   ├── src/main/
 │   │   ├── kotlin/com/example/fileconverter/
-│   │   │   ├── converter/      # Core on-device conversion engines (PdfConverter, PptxBuilder, etc.)
+│   │   │   ├── converter/      # On-device conversion pipelines (PdfConverter, PptxBuilder, etc.)
 │   │   │   ├── ui/
-│   │   │   │   ├── screens/    # Jetpack Compose screen composables
-│   │   │   │   ├── theme/      # Dynamic theme engine & 6 custom palettes
-│   │   │   │   └── components/ # Micro-animations, GlassCard, QuickLook
+│   │   │   │   ├── screens/    # Jetpack Compose UI screens
+│   │   │   │   ├── theme/      # Dynamic theme engine with 6 bespoke color profiles
+│   │   │   │   └── components/ # Micro-interactions, GlassCard, QuickLook
 │   │   │   ├── util/           # ImpactStatsManager, MediaStoreHelper, FileUtils
-│   │   │   └── viewmodel/      # MVVM reactive state holders
-│   │   └── res/                # Vector drawables, adaptive launcher icons, localized strings
+│   │   │   └── viewmodel/      # MVVM reactive state managers
+│   │   └── res/                # Drawables, launcher icons, and localized resources
 └── build.gradle.kts
 ```
 
@@ -64,26 +65,33 @@ FileBodlai/
 
 ---
 
-## 🚀 Building from Source
+## Building from Source
 
 ### Prerequisites
 - JDK 17
 - Android SDK (compileSdk 34)
 
-### Clone & Build
+### Clone and Build
 ```bash
-git clone https://github.com/your-username/FileBodlai.git
+git clone https://github.com/SMMahmudIqbal/FileBodlai.git
 cd FileBodlai
 
 # Build debug APK
 ./gradlew assembleDebug
 
-# Output APK location:
+# Output APK path:
 # app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ---
 
-## 📄 License
+## Author and Attribution
+
+**Developed by S. M. Mahmud Iqbal**  
+- GitHub: [@SMMahmudIqbal](https://github.com/SMMahmudIqbal)
+
+---
+
+## License
 
 This project is licensed under the [MIT License](LICENSE).

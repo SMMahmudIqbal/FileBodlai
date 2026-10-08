@@ -1,20 +1,26 @@
-# Security Policy for File Bodlai 🔒
+# Security Policy for File Bodlai
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
+| Version | Supported |
+| ------- | --------- |
+| 1.0.x   | Yes       |
 
 ---
 
 ## Reporting a Vulnerability
 
-Because **File Bodlai** is an air-gapped, 100% offline application that does not possess internet access or interact with remote databases, the typical attack surface (SQL injection, XSS, server-side data breaches) is not applicable.
+Because **File Bodlai** is an air-gapped, 100% offline application that does not possess internet access or interact with remote databases, typical attack vectors (such as remote code execution, SQL injection, cross-site scripting, and server-side data leaks) do not apply.
 
-However, we take local security, file isolation, memory corruption, and Scoped Storage boundaries very seriously.
+However, local file boundary integrity, memory isolation, and Scoped Storage compliance are strictly maintained.
 
-If you discover a security vulnerability:
-1. **Do not disclose the issue publicly** in a public issue.
-2. Please open a Private Security Advisory on GitHub under the **Security** tab of the repository, or contact the maintainers directly.
-3. We will acknowledge receipt of your report within 48 hours and work with you on a patch.
+If you discover a security concern:
+1. Do not disclose the issue publicly.
+2. Open a Private Security Advisory under the repository's **Security** tab, or contact the maintainer ([@SMMahmudIqbal](https://github.com/SMMahmudIqbal)).
+3. Vulnerability reports are reviewed and acknowledged promptly.
+
+---
+
+## Attribution
+
+Developed by S. M. Mahmud Iqbal
