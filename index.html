@@ -2,16 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="author" content="S. M. Mahmud Iqbal" />
+    <meta name="creator" content="S. M. Mahmud Iqbal" />
+    <meta name="developer" content="Developed by S. M. Mahmud Iqbal" />
     <link rel="icon" type="image/jpeg" href="/logo.jpg" />
     <link rel="apple-touch-icon" href="/logo.jpg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0d132d" />
-    <title>File Bodlai (ফাইল বদলাই) — 100% Offline & Private File Converter</title>
-    <meta name="description" content="100% Offline, secure, and client-side file converter for PDF to PPTX, Merge PDF, Image to PDF, PDF to Images, Image to Image, and Text to PDF. Zero server uploads." />
-    <meta property="og:title" content="File Bodlai (ফাইল বদলাই) — 100% Offline File Converter" />
-    <meta property="og:description" content="Convert PDFs, images, and text right in your browser. 100% private, no file uploads to any server." />
+    
+    <!-- PWA / Desktop App Capabilities -->
+    <meta name="application-name" content="File Bodlai" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="File Bodlai" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <title>File Bodlai (ফাইল বদলাই) — 100% Offline PC WebApp & File Converter</title>
+    <meta name="description" content="100% Offline, secure, and client-side PC WebApp for PDF to PPTX, Merge PDF, Image to PDF, PDF to Images, Image to Image, and Text to PDF. Zero server uploads. Developed by S. M. Mahmud Iqbal." />
+    <meta property="og:title" content="File Bodlai (ফাইল বদলাই) — 100% Offline PC WebApp" />
+    <meta property="og:description" content="Convert PDFs, images, and text right in your PC browser. 100% private. Developed by S. M. Mahmud Iqbal." />
     <meta property="og:image" content="/logo.jpg" />
     <meta property="og:type" content="website" />
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,5 +33,16 @@
   <body class="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-purple-500 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Register PWA Service Worker for Offline PC Execution -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch((err) => {
+            console.log('SW registration note:', err);
+          });
+        });
+      }
+    </script>
   </body>
 </html>

@@ -157,7 +157,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
               </div>
 
               <p>
-                File Bodlai was created by <strong>S. M. Mahmud Iqbal</strong> to empower users with a fast, private, and beautifully designed alternative to bloated online file converters.
+                File Bodlai was <strong>Developed by S. M. Mahmud Iqbal</strong> to empower users with a fast, private, and beautifully designed alternative to bloated online file converters.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">

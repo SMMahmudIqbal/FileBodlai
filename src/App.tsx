@@ -57,6 +57,67 @@ export function App() {
     root.style.setProperty('--card-glow', currentTheme.cardGlow);
   }, [currentTheme]);
 
+  // Desktop PC Keyboard Shortcuts & Drag-Drop listeners
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ctrl+T / Cmd+T: Theme Modal
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        setIsThemeModalOpen((prev) => !prev);
+      }
+      // Ctrl+L / Cmd+L: Language Switcher
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'l') {
+        e.preventDefault();
+        setLanguage((prev) => {
+          const next = prev === 'en' ? 'bn' : 'en';
+          localStorage.setItem('bodlai_lang', next);
+          return next;
+        });
+      }
+      // Esc: Close any active modal
+      if (e.key === 'Escape') {
+        setSelectedTool(null);
+        setIsThemeModalOpen(false);
+        setIsLegalModalOpen(false);
+      }
+    };
+
+    // Global dragover prevent default to allow drop anywhere
+    const handleGlobalDragOver = (e: DragEvent) => {
+      e.preventDefault();
+    };
+
+    // Global drop handler to auto-select tool
+    const handleGlobalDrop = (e: DragEvent) => {
+      e.preventDefault();
+      if (selectedTool) return; // If a tool modal is already open, let the modal handle it
+      if (e.dataTransfer && e.dataTransfer.files.length > 0) {
+        const file = e.dataTransfer.files[0];
+        const name = file.name.toLowerCase();
+        if (name.endsWith('.pdf')) {
+          const tool = TOOLS_CONFIG.find((t) => t.id === 'pdf-to-pptx') || TOOLS_CONFIG[0];
+          setSelectedTool(tool);
+        } else if (name.endsWith('.png') || name.endsWith('.jpg') || name.endsWith('.jpeg') || name.endsWith('.webp')) {
+          const tool = TOOLS_CONFIG.find((t) => t.id === 'image-to-pdf') || TOOLS_CONFIG[2];
+          setSelectedTool(tool);
+        } else if (name.endsWith('.txt')) {
+          const tool = TOOLS_CONFIG.find((t) => t.id === 'text-to-pdf') || TOOLS_CONFIG[5];
+          setSelectedTool(tool);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('dragover', handleGlobalDragOver);
+    window.addEventListener('drop', handleGlobalDrop);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('dragover', handleGlobalDragOver);
+      window.removeEventListener('drop', handleGlobalDrop);
+    };
+  }, [selectedTool]);
+
   const openLegalModalWithTab = (tab: 'privacy' | 'terms' | 'about' = 'privacy') => {
     setLegalTab(tab);
     setIsLegalModalOpen(true);
@@ -102,7 +163,7 @@ export function App() {
           <div className="flex items-center justify-between mb-8 px-1">
             <div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                {language === 'bn' ? 'কনভার্টার টুলস' : 'Conversion Tools'}
+                {language === 'bn' ? 'কনভার্টার টুলস (PC WebApp)' : 'Conversion Tools (PC WebApp)'}
               </h2>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
                 {language === 'bn'
@@ -110,9 +171,11 @@ export function App() {
                   : 'All 6 tools run locally inside your browser — zero upload wait'}
               </p>
             </div>
-            <span className="hidden sm:inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300">
-              6 Studio Tools
-            </span>
+            <div className="hidden sm:flex items-center space-x-2">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300">
+                ⌨️ Ctrl+T Themes • Ctrl+L Language
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

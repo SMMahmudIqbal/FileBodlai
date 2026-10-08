@@ -1,0 +1,70 @@
+{
+  "name": "File Bodlai - 100% Offline File Converter",
+  "short_name": "File Bodlai",
+  "description": "100% Offline & Private File Studio for PC. Developed by S. M. Mahmud Iqbal",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0D132D",
+  "theme_color": "#0D132D",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "PDF to PPTX",
+      "short_name": "PDF to PPTX",
+      "description": "Convert PDF pages to PowerPoint slides",
+      "url": "/#pdf-to-pptx",
+      "icons": [{ "src": "/logo.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Merge PDF",
+      "short_name": "Merge PDF",
+      "description": "Combine multiple PDF files",
+      "url": "/#merge-pdf",
+      "icons": [{ "src": "/logo.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Image to PDF",
+      "short_name": "Image to PDF",
+      "description": "Convert images to PDF document",
+      "url": "/#image-to-pdf",
+      "icons": [{ "src": "/logo.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "PDF to Images",
+      "short_name": "PDF to Images",
+      "description": "Extract pages as images",
+      "url": "/#pdf-to-images",
+      "icons": [{ "src": "/logo.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Image Converter",
+      "short_name": "Image to Image",
+      "description": "Convert and resize images",
+      "url": "/#image-to-image",
+      "icons": [{ "src": "/logo.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Text to PDF",
+      "short_name": "Text to PDF",
+      "description": "Convert text into paginated PDF",
+      "url": "/#text-to-pdf",
+      "icons": [{ "src": "/logo.jpg", "sizes": "192x192" }]
+    }
+  ]
+}
