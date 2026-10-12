@@ -7,7 +7,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css&logoColor=white)
 ![Zero Server Cost](https://img.shields.io/badge/Server%20Cost-$0%20Forever-success)
 
-The official web edition of **File Bodlai (ফাইল বদলাই)** — the ultra-fast, 100% offline and private file conversion suite.
+The official web edition of **File Bodlai (ফাইল বদলাই)** • the ultra-fast, 100% offline and private file conversion suite.
 
 Built with **React 19 + TypeScript + Vite + Tailwind CSS**, designed to be deployed directly to **Vercel** with zero server costs, zero cold-starts, and infinite scalability.
 

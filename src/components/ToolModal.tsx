@@ -48,8 +48,7 @@ export const ToolModal: React.FC<ToolModalProps> = ({
   // Text-to-PDF text state
   const [textContent, setTextContent] = useState('');
 
-  // Tool Specific Options
-  // 1. Image to PDF options
+  // Tool Specific Options • 1. Image to PDF options
   const [imgToPdfOpts, setImgToPdfOpts] = useState<ImageToPdfOptions>({
     pageSize: 'A4',
     orientation: 'auto',

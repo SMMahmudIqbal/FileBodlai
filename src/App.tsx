@@ -167,8 +167,8 @@ export function App() {
               </h2>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
                 {language === 'bn'
-                  ? 'সব টুলস ১০০% ব্রাউজার মেমরিতে চলে — কোনো আপলোড লিমিট নেই'
-                  : 'All 6 tools run locally inside your browser — zero upload wait'}
+                  ? 'সব টুলস ১০০% ব্রাউজার মেমরিতে চলে • কোনো আপলোড লিমিট নেই'
+                  : 'All 6 tools run locally inside your browser • zero upload wait'}
               </p>
             </div>
             <div className="hidden sm:flex items-center space-x-2">
