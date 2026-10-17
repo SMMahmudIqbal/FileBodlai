@@ -83,6 +83,8 @@ cd FileBodlai
 # app/build/outputs/apk/debug/app-debug.apk
 ```
 
+Release builds require a private keystore and the `KEYSTORE_PASSWORD`, `KEY_ALIAS`, and `KEY_PASSWORD` values supplied through a protected environment or Gradle properties. `RELEASE_STORE_FILE` may specify the keystore path; otherwise the build looks for the existing `bodlai-release-key.jks` outside version control. The release build fails if the keystore or any required signing value is missing. Never add the keystore or credentials to Git.
+
 ---
 
 ## Author and Attribution

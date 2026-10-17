@@ -4,6 +4,30 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+val releaseStorePath = providers.gradleProperty("RELEASE_STORE_FILE").orNull
+    ?: System.getenv("RELEASE_STORE_FILE")
+val releaseStorePassword = providers.gradleProperty("KEYSTORE_PASSWORD").orNull
+    ?: System.getenv("KEYSTORE_PASSWORD")
+val releaseKeyAlias = providers.gradleProperty("KEY_ALIAS").orNull
+    ?: System.getenv("KEY_ALIAS")
+val releaseKeyPassword = providers.gradleProperty("KEY_PASSWORD").orNull
+    ?: System.getenv("KEY_PASSWORD")
+val releaseStoreFile = releaseStorePath?.let { file(it) } ?: file("../bodlai-release-key.jks")
+val missingReleaseSigningInputs = listOf(
+    "KEYSTORE_PASSWORD" to releaseStorePassword,
+    "KEY_ALIAS" to releaseKeyAlias,
+    "KEY_PASSWORD" to releaseKeyPassword
+).filter { it.second.isNullOrBlank() }.map { it.first }
+
+gradle.taskGraph.whenReady {
+    if (allTasks.any { it.name == "assembleRelease" || it.name == "bundleRelease" }) {
+        check(missingReleaseSigningInputs.isEmpty() && releaseStoreFile.isFile) {
+            "Release signing requires a valid keystore and protected values for: ${missingReleaseSigningInputs.joinToString()}. " +
+                "Set RELEASE_STORE_FILE (optional) and the KEYSTORE_PASSWORD, KEY_ALIAS, and KEY_PASSWORD values."
+        }
+    }
+}
+
 android {
     namespace = "com.example.fileconverter"
     compileSdk = 34
@@ -16,26 +40,20 @@ android {
     }
     signingConfigs {
         create("release") {
-            val keyFile = file("../bodlai-release-key.jks")
-            if (keyFile.exists()) {
-                storeFile = keyFile
-                storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "Bodlai@Files2026"
-                keyAlias = System.getenv("KEY_ALIAS") ?: "bodlai_files"
-                keyPassword = System.getenv("KEY_PASSWORD") ?: "Bodlai@Files2026"
-                enableV1Signing = true
-                enableV2Signing = true
-                enableV3Signing = true
-                enableV4Signing = true
-            }
+            storeFile = releaseStoreFile
+            storePassword = releaseStorePassword.orEmpty()
+            keyAlias = releaseKeyAlias.orEmpty()
+            keyPassword = releaseKeyPassword.orEmpty()
+            enableV1Signing = true
+            enableV2Signing = true
+            enableV3Signing = true
+            enableV4Signing = true
         }
     }
     buildTypes {
         release {
             isMinifyEnabled = false
-            val releaseSigning = signingConfigs.findByName("release")
-            if (releaseSigning?.storeFile?.exists() == true) {
-                signingConfig = releaseSigning
-            }
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     lint {
